@@ -16,7 +16,7 @@ Part of the [Versatia examples](https://github.com/VersatiaFramework/VersatiaExa
 
 ## Things to try
 
-- Make `Greeter` depend on `Banner`: the build fails with `Dependency cycle: Banner -> Greeter -> Banner`.
+- Make `Greeter` depend on `Banner`: the build fails with `Dependency cycle: ...Greeter -> ...Banner -> ...Greeter`.
 - Rename a class: the bean names change with it, nothing else does.
 
 ## Building
