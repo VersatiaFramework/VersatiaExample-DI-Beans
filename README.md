@@ -1,19 +1,18 @@
-    # VersatiaExample-DI-Beans
+# VersatiaExample-DI-Beans
 
-    Three `@LocalBean` classes created in dependency order, one of them taking the plugin instance, which is a bean without any annotation.
+Three `@LocalBean` classes created in dependency order, each taking the plugin instance (a bean without any annotation) for its logger.
 
-    Part of the [Versatia examples](https://github.com/VersatiaFramework/VersatiaExamples); documentation: [Dependency injection](https://versatiaframework.github.io/VersatiaDocs/docs/dependency-injection/).
+Part of the [Versatia examples](https://github.com/VersatiaFramework/VersatiaExamples); documentation: [Dependency injection](https://versatiaframework.github.io/VersatiaDocs/docs/dependency-injection).
 
-    **Start with** [`Beans.kt`](src/main/kotlin/com/github/marcoral/versatia/example/beans/Beans.kt).
+**Start with** [`Beans.kt`](src/main/kotlin/com/github/marcoral/versatia/example/beans/Beans.kt).
 
-    ## What the log shows
+## What the log shows
 
-    ```
-    [Clock] created
-[Greeter] created, Clock injected
-[Banner] created; VersatiaExample-DI-Beans says: Hello! It is ...
-    ```
-
+```
+[VersatiaExample-DI-Beans] Clock created
+[VersatiaExample-DI-Beans] Greeter created, Clock injected
+[VersatiaExample-DI-Beans] Banner created; Greeter says: Hello! It is ...
+```
 
 ## Things to try
 
@@ -22,8 +21,10 @@
 
 ## Building
 
-Requires JDK 21 and VersatiaAPI in your local Maven repository (`./gradlew publishToMavenLocal`
-in its checkout); running it requires a Paper 1.21.4 server with VersatiaCore installed.
+Requires JDK 21 and VersatiaStarter with what it exports (VersatiaAPI, the module APIs) in your
+local Maven repository (`./gradlew publishToMavenLocal` in each checkout; see
+[Building the framework](https://versatiaframework.github.io/VersatiaDocs/docs/contributing/building));
+running it requires a Paper 1.21.4 server with VersatiaCore installed.
 
 ```bash
 ./gradlew build
