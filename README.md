@@ -1,6 +1,6 @@
 # VersatiaExample-DI-Beans
 
-Three `@LocalBean` classes created in dependency order, each taking the plugin instance (a bean without any annotation) for its logger.
+Three `@LocalBean` classes created in dependency order, each taking the plugin's `Logger`, a bean every plugin has without declaring it.
 
 Part of the [Versatia examples](https://github.com/VersatiaFramework/VersatiaExamples); documentation: [Dependency injection](https://versatiaframework.github.io/VersatiaDocs/docs/dependency-injection).
 
@@ -18,6 +18,9 @@ Part of the [Versatia examples](https://github.com/VersatiaFramework/VersatiaExa
 
 - Make `Greeter` depend on `Banner`: the build fails with `Dependency cycle: ...Greeter -> ...Banner -> ...Greeter`.
 - Rename a class: the bean names change with it, nothing else does.
+- Replace `logger: Logger` in `Clock` with `plugin: BeansPlugin` and log with `plugin.logger`: the
+  main class is a bean too, named `plugin`, injectable by its own type or any supertype
+  (`JavaPlugin`, `Plugin`). Take it when you need more than its logger.
 
 ## Building
 

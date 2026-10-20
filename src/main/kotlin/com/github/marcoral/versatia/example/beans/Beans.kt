@@ -2,12 +2,13 @@ package com.github.marcoral.versatia.example.beans
 
 import com.github.marcoral.versatia.di.LocalBean
 import java.time.Instant
+import java.util.logging.Logger
 
-/** The main class is injectable by its own type or any supertype (`JavaPlugin`, `Plugin`); each bean here takes it for its logger. */
+/** Every plugin has a `Logger` bean, its own `plugin.logger`; each bean here takes it to log. */
 @LocalBean
-class Clock(plugin: BeansPlugin) {
+class Clock(logger: Logger) {
     init {
-        plugin.logger.info("Clock created")
+        logger.info("Clock created")
     }
 
     fun now() = Instant.now()
@@ -15,17 +16,17 @@ class Clock(plugin: BeansPlugin) {
 
 /** Constructor injection: the runtime creates `Clock` first. */
 @LocalBean
-class Greeter(private val clock: Clock, plugin: BeansPlugin) {
+class Greeter(private val clock: Clock, logger: Logger) {
     init {
-        plugin.logger.info("Greeter created, Clock injected")
+        logger.info("Greeter created, Clock injected")
     }
 
     fun greeting() = "Hello! It is ${clock.now()}."
 }
 
 @LocalBean
-class Banner(greeter: Greeter, plugin: BeansPlugin) {
+class Banner(greeter: Greeter, logger: Logger) {
     init {
-        plugin.logger.info("Banner created; Greeter says: ${greeter.greeting()}")
+        logger.info("Banner created; Greeter says: ${greeter.greeting()}")
     }
 }
