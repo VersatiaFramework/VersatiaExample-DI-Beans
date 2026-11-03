@@ -2,9 +2,9 @@
 
 Three `@LocalBean` classes created in dependency order, each taking the plugin's `Logger`, a bean every plugin has without declaring it.
 
-Part of the [Versatia examples](https://github.com/VersatiaFramework/VersatiaExamples); documentation: [Dependency injection](https://versatiaframework.github.io/VersatiaDocs/docs/dependency-injection).
+Part of the [Versatia examples](https://github.com/VersatiaFramework/VersatiaExamples); documentation: [Dependency injection](https://versatia.dev/docs/dependency-injection).
 
-**Start with** [`Beans.kt`](src/main/kotlin/com/github/marcoral/versatia/example/beans/Beans.kt).
+**Start with** [`Beans.kt`](src/main/kotlin/dev/versatia/example/beans/Beans.kt).
 
 ## What the log shows
 
@@ -26,7 +26,7 @@ Part of the [Versatia examples](https://github.com/VersatiaFramework/VersatiaExa
 
 Requires JDK 21 and VersatiaAPI in your
 local Maven repository (`./gradlew publishToMavenLocal` in each checkout; see
-[Building the framework](https://versatiaframework.github.io/VersatiaDocs/docs/contributing/building));
+[Building the framework](https://versatia.dev/docs/contributing/building));
 running it requires a Paper 1.21.4 server with VersatiaCore installed.
 
 ```bash

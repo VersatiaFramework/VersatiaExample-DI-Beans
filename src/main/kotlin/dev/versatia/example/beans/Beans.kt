@@ -1,6 +1,6 @@
-package com.github.marcoral.versatia.example.beans
+package dev.versatia.example.beans
 
-import com.github.marcoral.versatia.di.LocalBean
+import dev.versatia.di.LocalBean
 import java.time.Instant
 import java.util.logging.Logger
 

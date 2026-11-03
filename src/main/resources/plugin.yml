@@ -1,6 +1,6 @@
 name: VersatiaExample-DI-Beans
 version: '${version}'
-main: com.github.marcoral.versatia.example.beans.BeansPlugin
+main: dev.versatia.example.beans.BeansPlugin
 api-version: '1.21'
 author: Versatia
 description: Local beans created in dependency order.
